@@ -1,0 +1,14 @@
+<div class="listContainer">
+  <div *ngFor = "let shop of shops">
+    <div class="shop" *ngIf="likedShops &&likedShops.includes(shop.id_shop);">
+      <p class="title">{{ shop.name_shop }} -- {{ shop.id_shop }}</p>
+      <hr>
+      <img src="../../assets/img/bg.jpg" width="400" height="250">
+      <hr>
+      <div class="buttons">
+        <input type="button" class="btn btn-danger" (click)="dislikeShop(shop)" value="Remove from favorite"/>
+      </div>
+    </div>
+  </div>
+  <div class="filter"></div>
+</div>

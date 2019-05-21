@@ -1,0 +1,8 @@
+.disable{
+  display: none;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  bottom: 0;
+
+}
