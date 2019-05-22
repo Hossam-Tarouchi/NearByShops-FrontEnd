@@ -14,11 +14,15 @@ export class LikedShopsComponent implements OnInit {
   ShopsRemoved = [];
   localArrayStay = JSON.parse(localStorage.getItem('likedshops'))['likedshops'];;
   constructor() {
-    localStorage.setItem('ShopsRemoved', JSON.stringify({ShopsRemoved: this.ShopsRemoved}));
   }
 
   ngOnInit() {
-
+    if(!JSON.parse(localStorage.getItem('ShopsRemoved'))){
+      console.log('dans if');
+      localStorage.setItem('ShopsRemoved', JSON.stringify({ShopsRemoved: this.ShopsRemoved}));
+    }else {
+      console.log('dans else');
+    }
   }
 
   dislikeShop(id_shop) {
@@ -34,8 +38,11 @@ export class LikedShopsComponent implements OnInit {
         this.localArrayStay.push(id);
       }
     }
+    console.log('-------------- In component ---------------');
+
     localStorage.setItem('ShopsRemoved', JSON.stringify({ShopsRemoved: this.ShopsRemoved}));
     localStorage.setItem('likedshops', JSON.stringify({likedshops: this.localArrayStay}));
+    console.log(JSON.parse(localStorage.getItem('ShopsRemoved'))['ShopsRemoved']);
   }
 
 }

@@ -13,10 +13,12 @@ export class ShopsComponent implements OnInit {
   shops;
   likedShops;
   localLikedShops = [];
+  ShopsRemoved = [];
   constructor(private shopsservice: ShopsService) {
   }
 
   ngOnInit() {
+
       if (!localStorage.getItem('shops')) {
       this.shopsservice.getShops().subscribe(data => {
       localStorage.setItem('shops', JSON.stringify({shops: data['result']}));
