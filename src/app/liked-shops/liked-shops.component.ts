@@ -12,6 +12,7 @@ export class LikedShopsComponent implements OnInit {
   shops = JSON.parse(localStorage.getItem('shops'))['shops'];
   likedShops = JSON.parse(localStorage.getItem('likedshops'))['likedshops'];
   ShopsRemoved = [];
+  sortedDistance = this.sortedDistance = JSON.parse(localStorage.getItem('sortedDistance'))['sortedDistance'];
   localArrayStay = JSON.parse(localStorage.getItem('likedshops'))['likedshops'];;
   constructor() {
   }
@@ -42,6 +43,14 @@ export class LikedShopsComponent implements OnInit {
     localStorage.setItem('ShopsRemoved', JSON.stringify({ShopsRemoved: this.ShopsRemoved}));
     localStorage.setItem('likedshops', JSON.stringify({likedshops: this.localArrayStay}));
     console.log(JSON.parse(localStorage.getItem('ShopsRemoved'))['ShopsRemoved']);
+
   }
 
+  afficheDistance(shop_id){
+    for(let i = 0; i < this.sortedDistance.length; i++){
+      if (shop_id === this.sortedDistance[i][0]){
+        return this.sortedDistance[i][1];
+      }
+    }
+  }
 }

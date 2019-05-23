@@ -16,7 +16,7 @@ export class ShopsComponent implements OnInit {
   localLikedShops = [];
   ShopsRemoved = [];
   sortedDistance = [];
-  ShopsRemoved = [];
+
   constructor(private shopsservice: ShopsService) {
   }
 

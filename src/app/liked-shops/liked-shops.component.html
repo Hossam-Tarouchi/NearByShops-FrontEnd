@@ -1,7 +1,7 @@
 <div class="listContainer">
   <div *ngFor = "let shop of shops">
     <div class="shop" *ngIf="likedShops && localArrayStay &&likedShops.includes(shop.id_shop) && localArrayStay.includes(shop.id_shop) ;">
-      <p class="title">{{ shop.name_shop }} -- {{ shop.id_shop }}</p>
+      <p class="title">{{ shop.name_shop }} -- {{ afficheDistance(shop.id)}} Kilometres</p>
       <hr>
       <img src="../../assets/img/bg.jpg" width="400" height="250">
       <hr>
