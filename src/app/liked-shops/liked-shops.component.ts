@@ -18,10 +18,9 @@ export class LikedShopsComponent implements OnInit {
 
   ngOnInit() {
     if(!JSON.parse(localStorage.getItem('ShopsRemoved'))){
-      console.log('dans if');
       localStorage.setItem('ShopsRemoved', JSON.stringify({ShopsRemoved: this.ShopsRemoved}));
-    }else {
-      console.log('dans else');
+    } else {
+
     }
   }
 

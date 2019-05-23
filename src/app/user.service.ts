@@ -28,7 +28,9 @@ export class UserService {
         password: userPassword
       } , {headers}).subscribe(
         (data: any) => {
-          console.log(data);
+          if (data === 'succes') {
+            this.login(username, userPassword);
+          }
         }
       );
     }
@@ -71,9 +73,6 @@ export class UserService {
       (data => console.log(data)));
     }
     /*-----------------*/
-    console.log('-----------------In Logout----------------');
-    console.log(JSON.parse(localStorage.getItem('localLikedShops'))['localLikedShops']);
-    console.log(JSON.parse(localStorage.getItem('ShopsRemoved'))['ShopsRemoved']);
     localStorage.removeItem('currentUser');
     localStorage.removeItem('shops');
     localStorage.removeItem('currentUserId');

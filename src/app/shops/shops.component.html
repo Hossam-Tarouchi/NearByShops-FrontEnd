@@ -1,13 +1,13 @@
 <div class="listContainer">
   <div *ngFor = "let shop of shops">
     <div class="shop" *ngIf="likedShops &&  !likedShops.includes(shop.id_shop) ;">
-      <p class="title">{{ shop.name_shop }} -- {{ shop.id_shop }}</p>
+      <p class="title">{{ shop.name_shop }} -- {{ afficheDistance(shop.id)}} Kilometres</p>
       <hr>
       <img src="../../assets/img/bg.jpg" width="400" height="250">
       <hr>
       <div class="buttons">
         <input type="button" class="btn btn-success" (click)="likeShop(shop.id_shop)" value="Add to favorites" />
-        <button type="button" class="btn btn-danger" (click)="dislikeShop(shop)">Dislike</button>
+        <input type="button" class="btn btn-danger" (click)="dislikeShop(shop)" value="Dislake"/>
       </div>
     </div>
   </div>
