@@ -4,8 +4,13 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../assets/img/bg.jpg" height="180px" width="286px" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{ shop.name_shop }}  ~{{ afficheDistance(shop.id)}} km</h5>
+          <h5 class="card-title">{{ shop.name_shop }}</h5>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam aspernatur deserunt dicta doloribus eligendi eveniet explicabo id iure.</p>
+          <div class="distanceInfo">
+            <hr>
+            <p class="distance">~{{ afficheDistance(shop.id)}} kilometres away from you</p>
+            <hr>
+          </div>
           <a (click)="dislikeShop(shop.id_shop)" class="btn btn-danger text-light">Remove from favorite list</a>
         </div>
       </div>

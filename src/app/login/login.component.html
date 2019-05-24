@@ -1,5 +1,8 @@
 <div class="login-form-1">
   <h3>Login</h3>
+  <div class="alert alert-danger" role="alert" *ngIf="loggedIn">
+    This is a danger alert—check it out!
+  </div>
   <form>
     <div class="form-group">
       <input type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="Your Username *" value="" />

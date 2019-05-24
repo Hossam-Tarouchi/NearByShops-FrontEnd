@@ -8,8 +8,8 @@
   margin: 0 auto;
   margin-top: 60px;
 }
-.filter{
 
+.filter{
   height: 100vh;
   margin: 0 auto;
   margin-top: 60px;
@@ -22,22 +22,21 @@
   right: 0;
   z-index: -1;
 }
-.shop {
-  background-color: rgba(255,255,255,0.5);
-  padding: 20px;
+
+.card {
   margin: 10px;
 }
-.shop p{
-  text-align: center;
-  font-size: 26px;
-  color: #333333;
+
+.distance{
+  font-size: 15px;
   margin: 0px;
-  padding: 0px;
+  color: #0062cc;
 }
-.shop .buttons{
-  display: flex;
-  justify-content: space-around;
+
+hr{
+  margin: 0px;
 }
-.shop button{
-  width: 120px;
+
+.distanceInfo{
+  margin-bottom: 10px;
 }

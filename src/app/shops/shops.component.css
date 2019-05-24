@@ -22,16 +22,19 @@
   right: 0;
   z-index: -1;
 }
-.shop {
-  background-color: rgba(255,255,255,0.5);
-  padding: 20px;
+.card {
   margin: 10px;
 }
 
-.shop .buttons{
-  display: flex;
-  justify-content: space-around;
+.distance{
+  font-size: 15px;
+  margin: 0px;
+  color: #0062cc;
 }
-.shop button{
-  width: 120px;
+
+hr{
+  margin: 0px;
+}
+.distanceInfo{
+  margin-bottom: 10px;
 }
