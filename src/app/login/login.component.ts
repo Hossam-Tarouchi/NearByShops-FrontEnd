@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../user.service';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +9,6 @@ import {Observable} from 'rxjs';
 export class LoginComponent implements OnInit {
   username = '';
   password = '';
-  loggedin: Observable<boolean>;
 
 
   constructor(private userservice: UserService) {

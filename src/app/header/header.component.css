@@ -7,14 +7,37 @@
   position: fixed;
   top: 0;
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-items:center;
   border-bottom: solid 2px white;
+  z-index: 1;
+}
+.links{
+  display: flex;
+  justify-items: center;
+}
+.links .lien{
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0,98,204,0.7);
+
+}
+.lien {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  text-align: center;
 }
 
-.navContainer p{
+.navContainer .title{
   font-size: 36px;
   color: white;
   margin: 0px;
+
 }
 .halfTitle{
   color: #0062cc;

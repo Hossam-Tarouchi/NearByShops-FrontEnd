@@ -1,6 +1,8 @@
 <div class="navContainer">
-  <p><span class="halfTitle">No time ?</span> Nearby Shops !</p>
-  <button routerLink="/shops">Shops</button>
-  <button routerLink="/likedshops">LikedShops</button>
-  <button (click)="logout()">Logout</button>
+  <p class="title"><span class="halfTitle">No time ?</span> Nearby Shops !</p>
+  <div class="links">
+    <button routerLink="/shops" class="lien">Shops</button>
+    <button routerLink="/likedshops" class="lien">LikedShops</button>
+    <button (click)="logout()" class="lien">Logout</button>
+  </div>
 </div>

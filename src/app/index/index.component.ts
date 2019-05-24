@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../user.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,6 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  pageIndex = true;
 
   constructor(private route: Router) { }
 

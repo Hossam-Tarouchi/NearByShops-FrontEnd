@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ShopsService} from '../shops.service';
-import {element} from 'protractor';
 
 
 
@@ -24,19 +23,19 @@ export class ShopsComponent implements OnInit {
 
     if (!localStorage.getItem('shops')) {
 
-          this.shopsservice.getUserId().subscribe(data => {
-          localStorage.setItem('currentUserId', JSON.stringify({id: data}));
-          this.shopsservice.getShops().subscribe(data => {
-            localStorage.setItem('shops', JSON.stringify({shops: data}));
+          this.shopsservice.getUserId().subscribe(dataUserid => {
+          localStorage.setItem('currentUserId', JSON.stringify({id: dataUserid}));
+          this.shopsservice.getShops().subscribe(dataShops => {
+            localStorage.setItem('shops', JSON.stringify({shops: dataShops}));
             this.shops = JSON.parse(localStorage.getItem('shops'))['shops'];
 
-            this.shopsservice.getLikedShops().subscribe(data => {
+            this.shopsservice.getLikedShops().subscribe(dataLikedShops => {
               if (this.likedShops == null) {
-                localStorage.setItem('likedshops', JSON.stringify({likedshops: data}));
+                localStorage.setItem('likedshops', JSON.stringify({likedshops: dataLikedShops}));
                 this.likedShops = JSON.parse(localStorage.getItem('likedshops'))['likedshops'];
                 localStorage.setItem('localLikedShops', JSON.stringify({localLikedShops: this.localLikedShops}));
-                this.shopsservice.getSortedDistances().subscribe(data => {
-                  localStorage.setItem('sortedDistance', JSON.stringify({sortedDistance: data} ));
+                this.shopsservice.getSortedDistances().subscribe(dataSortedDistances => {
+                  localStorage.setItem('sortedDistance', JSON.stringify({sortedDistance: dataSortedDistances} ));
                   this.sortedDistance = JSON.parse(localStorage.getItem('sortedDistance'))['sortedDistance'];
                   localStorage.setItem('ShopsRemoved', JSON.stringify({ShopsRemoved: this.ShopsRemoved}));
                 });
@@ -50,8 +49,6 @@ export class ShopsComponent implements OnInit {
       this.shops = JSON.parse(localStorage.getItem('shops'))['shops'];
       this.likedShops = JSON.parse(localStorage.getItem('likedshops'))['likedshops'];
       this.sortedDistance = JSON.parse(localStorage.getItem('sortedDistance'))['sortedDistance'];
-
-
     }
 
   }
@@ -64,9 +61,9 @@ export class ShopsComponent implements OnInit {
 
   }
 
-  afficheDistance(shop_id){
-      for(let i = 0; i < this.sortedDistance.length; i++){
-        if (shop_id === this.sortedDistance[i][0]){
+  afficheDistance(shopId) {
+      for (let i = 0; i < this.sortedDistance.length; i++) {
+        if (shopId === this.sortedDistance[i][0]) {
           return this.sortedDistance[i][1];
         }
       }
